@@ -1,5 +1,5 @@
 variable "REPO" {
-  default = "d3lta/docker-bake-demo"
+  default = "ghcr.io/d3lta/docker-bake-demo"
 }
 
 function "tag" {
@@ -21,7 +21,7 @@ target "app" {
 
   platforms = ["linux/amd64"]
   
-  tags = [tag("latest"), tag("1.0.0")]
+  tags = tag("latest")
 
   labels = {
     "org.opencontainers.image.source" = "https://github.com/d3lta/docker-bake-demo"
